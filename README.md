@@ -22,6 +22,12 @@ A TRMNL plugin for [Umami Analytics](https://umami.is).
 
 ## Known Issues
 
+### Only the full layout is working
+
+The `half_horizontal`, `half_vertical`, and `quadrant` layouts are present but currently broken. Only `full` is actively developed and tested.
+
+
+
 ### Timezone in `.trmnlp.yml`
 
 The top-level `time_zone` field in `.trmnlp.yml` is hardcoded rather than pulled from `UMAMI_TIMEZONE`. Ideally it would use `{{ env.UMAMI_TIMEZONE | default: 'America/New_York' }}` like the `custom_fields` entry does, but doing so breaks the dev preview. Until this is resolved upstream, update the hardcoded value in `.trmnlp.yml` manually if you need a different timezone.
