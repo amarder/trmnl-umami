@@ -1,0 +1,17 @@
+---
+# IANA time zone for trmnl.user context and polling URL interpolation
+time_zone: "{{ env.UMAMI_TIMEZONE | default: 'America/New_York' }}"
+
+# Watch these paths for live-reload
+watch:
+  - src
+  - .trmnlp.yml
+
+# Values for the custom fields defined in src/settings.yml.
+# Secrets are pulled from environment variables — see .env.example.
+custom_fields:
+  lookback_period: 604800
+  api_key: "{{ env.UMAMI_API_KEY }}"
+  hostname: "{{ env.UMAMI_HOSTNAME }}"
+  website_id: "{{ env.UMAMI_WEBSITE_ID }}"
+  time_zone: "{{ env.UMAMI_TIMEZONE | default: 'America/New_York' }}"

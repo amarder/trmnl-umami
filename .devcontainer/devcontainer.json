@@ -1,0 +1,34 @@
+{
+  "name": "trmnl-umami",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  // Forward the trmnlp preview server and open it automatically in the browser.
+  "forwardPorts": [4567],
+  "portsAttributes": {
+    "4567": {
+      "label": "trmnlp preview",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  // Pass Umami credentials from your host environment into the container.
+  // Export these variables in your shell profile (e.g. ~/.zshrc) before
+  // opening the devcontainer.
+  "remoteEnv": {
+    "UMAMI_API_KEY": "${localEnv:UMAMI_API_KEY}",
+    "UMAMI_HOSTNAME": "${localEnv:UMAMI_HOSTNAME}",
+    "UMAMI_WEBSITE_ID": "${localEnv:UMAMI_WEBSITE_ID}",
+    "UMAMI_TIMEZONE": "${localEnv:UMAMI_TIMEZONE}"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Liquid syntax highlighting and formatting
+        "sissel.shopify-liquid"
+      ]
+    }
+  }
+}

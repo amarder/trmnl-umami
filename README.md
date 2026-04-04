@@ -20,6 +20,33 @@ A TRMNL plugin for [Umami Analytics](https://umami.is).
 5. Click Import new (top right)
 6. Select the downloaded ZIP file
 
+## Local Development
+
+Uses [trmnlp](https://github.com/usetrmnl/trmnlp) for a live-reloading preview without the zip/upload cycle.
+
+### Prerequisites
+
+Export your Umami credentials in your shell profile (e.g. `~/.zshrc`) so the devcontainer can inherit them:
+
+```bash
+export UMAMI_API_KEY=your-api-key
+export UMAMI_HOSTNAME=umami.yourdomain.com
+export UMAMI_WEBSITE_ID=your-website-uuid
+export UMAMI_TIMEZONE=America/New_York
+```
+
+See `.env.example` for details on each variable.
+
+### Workflow
+
+1. Open the project in Cursor and run **Dev Containers: Reopen in Container** from the command palette
+2. Start the preview server:
+   ```bash
+   trmnlp serve
+   ```
+3. Port 4567 opens automatically in your browser — all four layout sizes are rendered side by side
+4. Edit any file in `src/` and the preview reloads instantly
+
 ## Configuration
 
 1. Set your preferred lookback period and time zone
