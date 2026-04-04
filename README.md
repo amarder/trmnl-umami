@@ -26,13 +26,10 @@ Uses [trmnlp](https://github.com/usetrmnl/trmnlp) for a live-reloading preview w
 
 ### Prerequisites
 
-Export your Umami credentials in your shell profile (e.g. `~/.zshrc`) so the devcontainer can inherit them:
+Copy `.env.example` to `.env` and fill in your Umami credentials:
 
 ```bash
-export UMAMI_API_KEY=your-api-key
-export UMAMI_HOSTNAME=umami.yourdomain.com
-export UMAMI_WEBSITE_ID=your-website-uuid
-export UMAMI_TIMEZONE=America/New_York
+cp .env.example .env
 ```
 
 See `.env.example` for details on each variable.
@@ -40,12 +37,16 @@ See `.env.example` for details on each variable.
 ### Workflow
 
 1. Open the project in Cursor and run **Dev Containers: Reopen in Container** from the command palette
-2. Start the preview server:
+2. In the container terminal, load your environment variables:
+   ```bash
+   set -a && source .env && set +a
+   ```
+3. Start the preview server:
    ```bash
    trmnlp serve
    ```
-3. Port 4567 opens automatically in your browser — all four layout sizes are rendered side by side
-4. Edit any file in `src/` and the preview reloads instantly
+4. Port 4567 opens automatically in your browser — all four layout sizes are rendered side by side
+5. Edit any file in `src/` and the preview reloads instantly
 
 ## Configuration
 
