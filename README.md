@@ -20,6 +20,12 @@ A TRMNL plugin for [Umami Analytics](https://umami.is).
 5. Click Import new (top right)
 6. Select the downloaded ZIP file
 
+## Known Issues
+
+### Timezone in `.trmnlp.yml`
+
+The top-level `time_zone` field in `.trmnlp.yml` is hardcoded rather than pulled from `UMAMI_TIMEZONE`. Ideally it would use `{{ env.UMAMI_TIMEZONE | default: 'America/New_York' }}` like the `custom_fields` entry does, but doing so breaks the dev preview. Until this is resolved upstream, update the hardcoded value in `.trmnlp.yml` manually if you need a different timezone.
+
 ## Local Development
 
 Uses [trmnlp](https://github.com/usetrmnl/trmnlp) for a live-reloading preview without the zip/upload cycle.

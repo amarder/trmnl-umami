@@ -5,12 +5,12 @@
 
 {% assign pageviews = IDX_0.pageviews %}
 
-{% assign total_pageviews = IDX_1.pageviews.value %}
+{% assign total_pageviews = IDX_1.pageviews %}
 
-{% assign total_visitors = IDX_1.visitors.value %}
+{% assign total_visitors = IDX_1.visitors %}
 
-{% assign total_visits = IDX_1.visits.value %}
-{% assign total_time = IDX_1.totaltime.value %}
+{% assign total_visits = IDX_1.visits %}
+{% assign total_time = IDX_1.totaltime %}
 {% assign average_seconds = total_time | divided_by: total_visits %}
 {% assign average_minutes = average_seconds | divided_by: 60 %}
 {% assign average_remainder_seconds = average_seconds | modulo: 60 %}

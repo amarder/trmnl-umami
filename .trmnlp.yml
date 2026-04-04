@@ -1,6 +1,6 @@
 ---
 # IANA time zone for trmnl.user context and polling URL interpolation
-time_zone: "{{ env.UMAMI_TIMEZONE | default: 'America/New_York' }}"
+time_zone: "America/New_York"
 
 # Watch these paths for live-reload
 watch:
@@ -15,4 +15,4 @@ custom_fields:
   hostname: "{{ env.UMAMI_HOSTNAME }}"
   api_prefix: "{{ env.UMAMI_API_PREFIX | default: 'api' }}"
   website_id: "{{ env.UMAMI_WEBSITE_ID }}"
-  time_zone: "{{ env.UMAMI_TIMEZONE | default: 'America/New_York' }}"
+  time_zone: "America/New_York"
