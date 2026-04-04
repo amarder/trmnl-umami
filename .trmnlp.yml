@@ -13,5 +13,6 @@ custom_fields:
   lookback_period: 604800
   api_key: "{{ env.UMAMI_API_KEY }}"
   hostname: "{{ env.UMAMI_HOSTNAME }}"
+  api_prefix: "{{ env.UMAMI_API_PREFIX | default: 'api' }}"
   website_id: "{{ env.UMAMI_WEBSITE_ID }}"
   time_zone: "{{ env.UMAMI_TIMEZONE | default: 'America/New_York' }}"

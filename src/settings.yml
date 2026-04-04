@@ -4,8 +4,8 @@ no_screen_padding: 'no'
 dark_mode: 'no'
 static_data: ''
 polling_verb: get
-polling_url: 'https://{{ hostname }}/api/websites/{{ website_id }}/pageviews?startAt={{ ''now'' | date: ''%s'' | minus: lookback_period | times: 1000 }}&endAt={{ ''now'' | date: ''%s'' | times: 1000}}&unit=day&timezone={{ time_zone | url_encode}}\nhttps://{{ hostname }}/api/websites/{{ website_id }}/stats?startAt={{ ''now'' | date: ''%s'' | minus: lookback_period | times: 1000 }}&endAt={{ ''now'' | date: ''%s'' | times: 1000}}'
-polling_headers: Authorization=Bearer {{ api_key }}
+polling_url: 'https://{{ hostname }}/{{ api_prefix }}/websites/{{ website_id }}/pageviews?startAt={{ ''now'' | date: ''%s'' | minus: lookback_period | times: 1000 }}&endAt={{ ''now'' | date: ''%s'' | times: 1000}}&unit=day&timezone={{ time_zone | url_encode}}\nhttps://{{ hostname }}/{{ api_prefix }}/websites/{{ website_id }}/stats?startAt={{ ''now'' | date: ''%s'' | minus: lookback_period | times: 1000 }}&endAt={{ ''now'' | date: ''%s'' | times: 1000}}'
+polling_headers: x-umami-api-key={{ api_key }}
 id: 25370
 custom_fields:
 - keyname: doesnt_matter
@@ -31,7 +31,14 @@ custom_fields:
   field_type: string
   name: Hostname
   placeholder: umami.mydomain.com
-  description: Host where Umami is hosted
+  description: "Host where Umami is hosted. Self-hosted: umami.mydomain.com — Cloud: api.umami.is"
+- keyname: api_prefix
+  field_type: select
+  options:
+  - Self-hosted: api
+  - Cloud: v1
+  name: Umami API Prefix
+  description: "Use 'api' for self-hosted Umami, 'v1' for Umami Cloud"
 - keyname: website_id
   field_type: string
   name: Website ID

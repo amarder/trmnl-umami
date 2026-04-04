@@ -51,10 +51,18 @@ See `.env.example` for details on each variable.
 ## Configuration
 
 1. Set your preferred lookback period and time zone
-2. Set your Umami instance hostname and website UUID
-   1. Given the website analytics URL of `https://umami.example.com/websites/ff7223cd-b92c-4895-a7ba-2088adca6d7e`
-   2. Your hostname is `umami.example.com`
-   3. Your website UUID is `ff7223cd-b92c-4895-a7ba-2088adca6d7e`
+2. Set your Umami instance hostname, API prefix, and website UUID
+
+   **Self-hosted Umami:**
+   - Hostname: `umami.example.com`
+   - API Prefix: `api`
+   - Website UUID: from the URL `https://umami.example.com/websites/<uuid>`
+
+   **Umami Cloud:**
+   - Hostname: `api.umami.is`
+   - API Prefix: `v1`
+   - Website UUID: from the URL `https://app.umami.is/websites/<uuid>`
+
 3. Set your API key
    1.  Create a new user with only read access to the website you want to monitor
    2.  Create an API key for that user
